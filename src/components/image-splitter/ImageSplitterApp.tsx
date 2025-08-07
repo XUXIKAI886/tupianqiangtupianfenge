@@ -1,12 +1,10 @@
 'use client';
 
 import React from 'react';
-import { RefreshCw, Download, Settings, Scissors, Sparkles, Zap, Shield, Star } from 'lucide-react';
+import { RefreshCw, Download, Scissors } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { useImageSplitter } from '@/hooks/useImageSplitter';
 import { ImageUploader } from './ImageUploader';
 import { ImagePreview } from './ImagePreview';
@@ -32,16 +30,16 @@ export function ImageSplitterApp() {
     try {
       await uploadAndSplitImage(file);
       toast.success('图片分割完成！');
-    } catch (error) {
+    } catch {
       toast.error('图片处理失败');
     }
   };
 
-  const handleDownloadSingle = async (image: any) => {
+  const handleDownloadSingle = async (image: { id: string; blob: Blob; url: string; width: number; height: number; filename: string }) => {
     try {
       await downloadSplit(image);
       toast.success('下载成功！');
-    } catch (error) {
+    } catch {
       toast.error('下载失败');
     }
   };
@@ -50,7 +48,7 @@ export function ImageSplitterApp() {
     try {
       await downloadAllSplits();
       toast.success('批量下载成功！');
-    } catch (error) {
+    } catch {
       toast.error('批量下载失败');
     }
   };

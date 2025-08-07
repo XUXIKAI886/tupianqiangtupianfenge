@@ -51,7 +51,7 @@ describe('图片处理工具函数', () => {
     });
 
     it('应该处理空文件输入', () => {
-      const result = validateImageFile(null as any);
+      const result = validateImageFile(null as unknown as File);
       expect(result.valid).toBe(false);
       expect(result.error).toContain('请选择一个文件');
     });

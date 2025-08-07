@@ -55,6 +55,7 @@ export function ImagePreview({
           <CardContent>
             <div className="space-y-4">
               <div className="relative bg-gray-50 rounded-lg overflow-hidden border">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={originalImage.url}
                   alt="原图"
@@ -109,6 +110,7 @@ export function ImagePreview({
               {splitImages.map((image, index) => (
                 <div key={image.id} className="space-y-3">
                   <div className="relative bg-gray-50 rounded-lg overflow-hidden group border">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
                       src={image.url}
                       alt={`分割图片 ${index + 1}`}

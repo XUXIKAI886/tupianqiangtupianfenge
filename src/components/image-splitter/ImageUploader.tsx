@@ -2,7 +2,6 @@
 
 import React, { useCallback, useState } from 'react';
 import { Upload, Image as ImageIcon, X } from 'lucide-react';
-import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 
@@ -163,7 +162,7 @@ export function ImageUploader({
           <Button
             variant="outline"
             disabled={disabled || isProcessing}
-            onClick={() => document.querySelector('input[type="file"]')?.click()}
+            onClick={() => (document.querySelector('input[type="file"]') as HTMLInputElement)?.click()}
             className="border-gray-300"
           >
             <Upload className="h-4 w-4 mr-2" />

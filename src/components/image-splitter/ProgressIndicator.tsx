@@ -48,19 +48,7 @@ export function ProgressIndicator({ progress, className }: ProgressIndicatorProp
     }
   };
 
-  const getProgressColor = () => {
-    switch (status) {
-      case 'uploading':
-      case 'processing':
-        return 'bg-blue-500';
-      case 'completed':
-        return 'bg-green-500';
-      case 'error':
-        return 'bg-red-500';
-      default:
-        return 'bg-gray-500';
-    }
-  };
+
 
   const getStatusText = () => {
     if (error) return error;
