@@ -6,9 +6,9 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
-  // 如果部署到子路径，取消注释并设置正确的basePath
-  // basePath: '/your-repo-name',
-  // assetPrefix: '/your-repo-name/',
+  // GitHub Pages部署配置
+  basePath: '/tupianqiangtupianfenge',
+  assetPrefix: '/tupianqiangtupianfenge/',
 };
 
 export default nextConfig;
